@@ -1,18 +1,12 @@
 # single-value selection over [Major_Genre, MPAA_Rating] pairs
 # use specific hard-wired values as the initial selected values
 import streamlit as st
-from re import T
-from turtle import circle, color, title
 import random
-import altair as alt
 import numpy as np
 import pandas as pd
-from vega_datasets import data
 import matplotlib.pyplot as plt
 import altair as alt
-import altair as alt
-import pandas as pd
-import numpy as np
+
 
 df =  pd.read_csv('world_happiness_data.csv',sep = ',', engine = 'python')
 st.title ("World happiness Report")
