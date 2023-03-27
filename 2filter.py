@@ -1,5 +1,4 @@
 
-
 import streamlit as st
 import altair as alt
 import numpy as np
@@ -11,8 +10,8 @@ df =  pd.read_csv('world_happiness_data.csv',sep = ',', engine = 'python')
 st.title ("WORLD HAPPINESS REPORT")
 #st.header("Interactive visualization")
 st.subheader("Happiness against Freedom,Social Support & GDP")
+st.caption(" Bottom-Left: Least-Happy and Top-Right: Most-Happy Regions")
 st.caption("FILTER1 : :blue[Please select required area in any of the scatter plots(individually)]")
-
 ###############################################################
 #Interactive-graphs
 select = alt.selection(type='interval')
@@ -25,9 +24,10 @@ scatter = alt.Chart(df).mark_point().encode(
     color=alt.condition(select, 'Region', alt.value('lightgray'), legend=None)).add_selection(select).transform_filter(click)
 #Bar-plot
 bars = alt.Chart(df).mark_bar().encode(
-    y='Region',color=alt.condition(click, 'Region', alt.value('lightgray')),
-    x= alt.X('count(Region)',scale=alt.Scale(domain=[0, 500]))
-    ).add_selection(click).transform_filter(select).properties(width=100, height=250).properties(title='FILTER2 : Please select any region')
+    y='Region',
+    color=alt.condition(click, 'Region', alt.value('lightgray')),
+    x= alt.X('count(Region)',scale=alt.Scale(domain=[0, 500]),title='')
+    ).add_selection(click).transform_filter(select).properties(width=130, height=250).properties(title='Filter 2 : Please select any region')
 #scatter and Bar plot
 scatter.encode(alt.X(
     'Social_support',scale=alt.Scale(zero=False))).properties( height=250,width=230).properties(title='Happiness VS Social_support')|scatter.encode(alt.X(
