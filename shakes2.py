@@ -22,7 +22,7 @@ image = books.get(image)
 
 st.sidebar.header("Word Cloud Settings")
 max_word = st.sidebar.slider("Max words", 10, 200,100, 10)
-max_font = st.sidebar.slider("Size of Largest word", 50, 350,180)
+max_font = st.sidebar.slider("Size of Largest word", 50, 350,120)
 image_size = st.sidebar.slider("image Width", 100, 800,400,10)
 random = st.sidebar.slider("Random State", 30, 100,40)
 stop_button = st.sidebar.checkbox("Remove Stop Words?")
