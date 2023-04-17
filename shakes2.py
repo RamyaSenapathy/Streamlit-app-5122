@@ -80,7 +80,7 @@ with tab2:
             #),
             
             
-            color=alt.Color('count:Q', scale=alt.Scale(scheme=alt.SchemeParams(name='yellowgreenblue', extent=[-1, 2]))),
+            color=alt.Color('count:Q', scale=alt.Scale(scheme=alt.SchemeParams(name='yellowgreenblue'))),
                        
             tooltip=['count']
         ).interactive().properties(width=900))
