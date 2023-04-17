@@ -73,7 +73,7 @@ with tab2:
             x=alt.X('count:Q'),
             y=alt.Y('word:N',sort='-x'),
             #color = alt.Color(scale=alt.Scale(scheme='yellowgreenblue')),
-            color=alt.Color("count:Q", scale=alt.Scale(scheme="redblue",domain=[1, -1]),
+            color=alt.Color(scale=alt.Scale(scheme="redblue",domain=[1, -1]),
             tooltip=['count']
         ).interactive().properties(width=900))
 
