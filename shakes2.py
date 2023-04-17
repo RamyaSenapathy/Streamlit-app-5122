@@ -73,10 +73,10 @@ with tab2:
             x=alt.X('count:Q'),
             y=alt.Y('word:N',sort='-x'),
             tooltip=['count']
-            color=alt.condition(
-                alt.datum.count >= 100,  # bar will be green
-                alt.value('green'),  # and if not steelblue.
-                alt.value('steelblue'))
+            color=alt.condition(alt.datum.count >= 100,  
+                                alt.value('green'), 
+                                alt.value('steelblue')
+                               )
 
         ).interactive().properties(width=900))
 
