@@ -72,8 +72,7 @@ with tab2:
         st.write(alt.Chart(chart_data,title=' Word Frequency').mark_bar().encode(
             x=alt.X('count:Q'),
             y=alt.Y('word:N',sort='-x'),
-            #color = alt.Color(scale=alt.Scale(scheme='yellowgreenblue',domain=[1, -1])),
-            color=alt.Color(sort="ascending", scale=alt.Scale(scheme='plasma')),
+            color=alt.Color('color').scale(None),
             tooltip=['count']
         ).interactive().properties(width=900))
 
