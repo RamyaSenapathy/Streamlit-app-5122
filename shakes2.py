@@ -71,7 +71,7 @@ with tab2:
         chart_data = chart_data[chart_data['count'] >= word_count]
         st.write(alt.Chart(chart_data,title=' Word Frequency').mark_bar().encode(
             x=alt.X('count:Q'),
-            y=alt.Y('word:N',sort='-x'),
+            y=alt.Y('word:N',sort='-x'), y2=alt.value(0),
             #color = alt.Color(scale=alt.Scale(scheme='yellowgreenblue',domain=[1, -1])),
             
             
