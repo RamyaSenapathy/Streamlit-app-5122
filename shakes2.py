@@ -73,11 +73,15 @@ with tab2:
             x=alt.X('count:Q'),
             y=alt.Y('word:N',sort='-x'),
             
-            color=alt.condition(
-                alt.datum.count >= 100,  
-                alt.value('green'), 
-                alt.value('lightgreen')
-            ),
+            #color=alt.condition(
+            #    alt.datum.count >= 100, 
+            #    alt.value('green'), 
+            #    alt.value('lightgreen')
+            #),
+            
+            
+            color=alt.Color('count:Q', scale=alt.Scale(scheme=alt.SchemeParams(name='yellowgreenblue', extent=[-1, 2]))),
+                       
             tooltip=['count']
         ).interactive().properties(width=900))
 
