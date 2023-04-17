@@ -72,13 +72,13 @@ with tab2:
         st.write(alt.Chart(chart_data,title=' Word Frequency').mark_bar().encode(
             x=alt.X('count:Q'),
             y=alt.Y('word:N',sort='-x'),
-            tooltip=['count']
+            
             color=alt.condition(
                 alt.datum.count >= 100,  
                 alt.value('green'), 
                 alt.value('steelblue')
             ),
-
+            tooltip=['count']
         ).interactive().properties(width=900))
 
 with tab3:
