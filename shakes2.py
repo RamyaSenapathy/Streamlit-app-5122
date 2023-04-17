@@ -76,7 +76,7 @@ with tab2:
             color=alt.condition(
                 alt.datum.count >= 100,  
                 alt.value('green'), 
-                alt.value('light green')
+                alt.value('lightgreen')
             ),
             tooltip=['count']
         ).interactive().properties(width=900))
