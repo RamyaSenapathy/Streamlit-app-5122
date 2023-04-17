@@ -71,20 +71,9 @@ with tab2:
         chart_data = chart_data[chart_data['count'] >= word_count]
         st.write(alt.Chart(chart_data,title=' Word Frequency').mark_bar().encode(
             x=alt.X('count:Q'),
-            y=alt.Y('word:N',sort='-x'), y2=alt.value(0),
+            y=alt.Y('word:N',sort='-x'),
             #color = alt.Color(scale=alt.Scale(scheme='yellowgreenblue',domain=[1, -1])),
-            
-            
-            
-            
-            color=alt.Gradient(gradient='linear',stops=[alt.GradientStop(color='white', offset=0),alt.GradientStop(color='darkgreen', offset=1)],
-                x1=1,
-                x2=1,
-                y1=1,
-                y2=0
-                ),
-            
-            
+                
             tooltip=['count']
         ).interactive().properties(width=900))
 
